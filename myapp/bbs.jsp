@@ -6,8 +6,12 @@
 <head>
 <meta charset="UTF-8">
 <style type="text/css">
+body {
+	background-color:	#FDFEE2;
+}
 h1, div, table {
 	width:	700px;
+	margin:	0 auto;
 }
 th {
 	text-align:	right;
@@ -15,6 +19,17 @@ th {
 }
 td {
 	padding:	5px;
+}
+
+table.list {
+	border-collapse:	collapse;
+}
+.list thead td {
+	background-color:	#66f;
+	color:			#fff;
+}
+.list tbody td {
+	background-color:	#dff;
 }
 </style>
 <title>掲示板</title>
@@ -66,6 +81,7 @@ td {
 	</tr>
 </table>
 </form>
+<hr>
 <%
 Connection con = null;
 
@@ -148,7 +164,6 @@ finally
 	}
 }
 %>
-version 1
 </body>
 </html>
 

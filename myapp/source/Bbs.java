@@ -51,19 +51,19 @@ public class Bbs extends HttpServlet {
 			// データベースのクローズ
 			stmt.close();
 			con.close();
-System.out.println(sql);
 		}
 		catch (SQLException e)
 		{
-			System.err.println("SQL failed.");
-			e.printStackTrace ();
+			PrintWriter out = response.getWriter();
+			out.println("SQLException: " + e.getMessage());
 		}
-		catch (ClassNotFoundException ex)
+		catch (ClassNotFoundException e)
 		{
-			ex.printStackTrace ();
+			PrintWriter out = response.getWriter();
+			out.println("ClassNotFoundException: " + e.getMessage());
 		}
 		// jspへ遷移
-//		getServletConfig().getServletContext().getRequestDispatcher("/jsp/bbs.jsp").forward(request, response);
+		//getServletConfig().getServletContext().getRequestDispatcher("/bbs.jsp").forward(request, response);
 	}
 
 }
